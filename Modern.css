@@ -1,0 +1,531 @@
+@font-face {font-family: "Sofia Pro"; src: url("//db.onlinewebfonts.com/t/060e116a70e3096c52db16f61aaab194.eot"); src: url("//db.onlinewebfonts.com/t/060e116a70e3096c52db16f61aaab194.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/060e116a70e3096c52db16f61aaab194.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/060e116a70e3096c52db16f61aaab194.woff") format("woff"), url("//db.onlinewebfonts.com/t/060e116a70e3096c52db16f61aaab194.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/060e116a70e3096c52db16f61aaab194.svg#Sofia Pro") format("svg"); }
+
+:root {
+    /*
+    We recommend you change these values to match your brand.
+    The light color has an opacity of .1, do not modify that
+    */
+    --primary-brand-color: rgba(53, 116, 214, 1);
+    --light-primary-brand-color: rgba(53, 116, 214, .1);
+
+    /* We recommend not changing these colors */
+    --full-page-background-color: #FAFAFA;
+    --application-background-color: #FFF;
+    --footer-color: #F3F3F3;
+    --main-text-color: #222222;
+    --sub-header-color: #666;
+    --link-color: #3574D6;
+    --field-border-color: #E1E1E1;
+}
+
+body {
+    font-family: sofia-pro,sans-serif;
+    letter-spacing: 0.03rem;
+}
+
+h1 {
+    color: #000;
+    font-size: 3rem;
+    line-height: 1.15;
+    margin: 0 0 10px 0;
+    font-weight: 400;
+
+}
+
+body #wrapper {
+    min-height: 100vh;
+}
+
+/* #wrapper::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 36.4em;
+    z-index: 2;
+    width: 15em;
+    height: 15em;
+    border-radius: 100%;
+    background-color: #08e8de;
+    opacity: .74;
+}
+
+#wrapper::before {
+    content: '';
+    position: absolute;
+    left: 1.2em;
+    top: 48.2em;
+    z-index: 1;
+    width: 10em;
+    height: 10em;
+    border-radius: 100%;
+    background-color: #662d91;
+    opacity: .88;
+} */
+
+#main {
+    display: flex;
+    justify-content: center;
+}
+
+/* #main::before {
+    content: '';
+    position: absolute;
+    top: 27.2em;
+    right: 1em;
+    z-index: 1;
+    width: 22em;
+    height: 22em;
+    border-radius: 100%;
+    background-color: #f20075;
+    opacity: 1;
+}
+
+#main::after {
+    content: '';
+    position: absolute;
+    top: 44.3em;
+    right: 9.6em;
+    z-index: 2;
+    width: 15em;
+    height: 15em;
+    border-radius: 100%;
+    background-color: #000;
+    opacity: .1;
+} */
+
+/* Select Boxes */
+#main .select2-choice {
+    height: 35px;
+}
+
+#main .select2-chosen {
+    line-height: 35px;
+}
+
+#main .select2-arrow {
+    padding-top: 4px;
+    padding-right: 4px;
+}
+
+#main .filter-label {
+    color: var(--sub-header-color);
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 2px;
+}
+
+#filter-count {
+    margin-top: 5px;
+    line-height: 1.7;
+    font-weight: 300;
+    font-size: .875rem;
+    letter-spacing: .03rem;
+    margin-left: 2px;
+}
+
+
+#main .location {
+    line-height: 1.7;
+    font-weight: 300;
+    font-size: .875rem;
+    letter-spacing: .03rem;
+}
+
+/* Job Board Page */
+#main > h1:not(.app-title) {
+    /* Hide the company name in favor of a Logo that includes it */
+    display: none;
+}
+
+#board_title {
+    margin: 0 0 25px 0;
+    color: #000;
+    font-size: 2.25rem;
+    line-height: 1.35;
+    font-weight: 300;
+}
+
+section {
+    margin-top: 50px;
+}
+
+section > h3 {
+    margin-top: 32px;
+    margin-bottom: 10px;
+}
+
+#logo {
+    display: inline-block;
+}
+
+body #content {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.7;
+    letter-spacing: 0.3;
+}
+
+#main section h3 {
+    color: #000;
+    font-size: 16px;
+    letter-spacing: .03rem;
+    line-height: 1.35;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+
+#main section .location {
+    display: block;
+    margin-top: -24px;
+}
+
+#main section .opening {
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+section .opening a {
+    font-size: 24px;
+    color: black;
+
+}
+
+section .opening a {
+    /* We want to increase the click area and background area of links to jobs,
+    so we combine padding and negative margin */
+    display: block;
+    height: 60px;
+    width: 100%;
+    margin-bottom: -20px;
+    padding-bottom: 0;
+    margin-left: -20px;
+    padding-left: 20px;
+    padding-top: 12px;
+    margin-top: -12px;
+    position: relative;
+    z-index: 1;
+    font-size: 1.75rem;
+    line-height: 1.35;
+    font-weight: 500;
+}
+
+section .opening a:hover {
+    border-radius: 3px;
+    color: rgb(0, 187, 255);
+    text-decoration: none;
+}
+
+body #footer {
+    border: none;
+    background-color: var(--footer-color);
+    height: 60px;
+    margin-top: -80px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+body #footer .privacy-policy {
+    line-height: 19px;
+}
+
+body #footer img {
+    width: 90px;
+}
+
+h3#filter-count {
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+/* Job Post Page */
+div#main div#app_body {
+    padding-left: 0 !important;
+    padding-right: 0;
+}
+
+div#app_body #header {
+    display: flex;
+    flex-direction: column;
+}
+
+div#app_body #header #apply_button {
+    order: 3;
+    margin-top: 37px
+}
+
+div#app_body #header .company-name {
+    display: none;
+}
+
+div#app_body #header > a {
+    order: 1;
+}
+
+div#app_body #header .app-title {
+    order: 2;
+}
+
+div#app_body #header .location {
+    order: 4;
+    margin-top: 2px;
+}
+
+div#main #application_form h2.heading {
+    color: var(--main-text-color);
+    font-weight: 400;
+}
+
+div#app_body .app-title {
+    color: #000;
+    font-size: 2.25rem;
+    line-height: 1.35;
+    font-weight: 300;
+    letter-spacing: .03rem;
+}
+
+div#app_body div#header #apply_button {
+    top: auto;
+    background-color: var(--primary-brand-color);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-weight: 600;
+}
+
+div#submit_buttons input#submit_app {
+    padding: 0.625rem 1.875rem;
+    border: 2px solid #f20075;
+    border-radius: 0.25rem;
+    background-color: white;
+    color: #f20075;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: .03rem;
+    text-shadow: none;
+    font-family: inherit;
+    transition: all 0.3s;
+}
+
+#app_body a {
+    color: rgb(0, 187, 255);
+    text-decoration: none;
+}
+
+.attach-or-paste .unstyled-button.link-button:hover {
+    text-decoration: none;
+}
+
+#app_body li::marker {
+    color: #f20075;
+}
+
+.attach-or-paste .unstyled-button.link-button {
+    color: rgb(0, 187, 255);
+    text-decoration: none;
+}
+
+#app_body .select2-choice {
+    color: black;
+}
+
+div#submit_buttons input#submit_app:hover {
+    color: white;
+    background-color: #f20075;
+}
+
+div#app_body {
+    max-width: none;
+    padding-right: 20px;
+}
+
+div#content {
+    padding-bottom: 10px;
+}
+
+div#application hr:nth-last-of-type(1) {
+    display: none;
+}
+
+div#application {
+    background-color: var(--application-background-color);
+    border-top: 1px solid var(--field-border-color);
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+}
+
+div#main_fields, div#custom_fields {
+    font-weight: 400;
+    line-height: 26px;
+}
+
+div#application div.field label {
+    color: var(--sub-header-color);
+    display: block;
+    float: none;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: left;
+}
+
+div#application div.field label span.asterisk {
+    font-size: 12px;
+}
+
+div#application #main_fields div.field textarea {
+    margin-left: 0;
+}
+
+div#application div.field input[type=text] {
+    border: solid 1px var(--field-border-color);
+    height: 25px;
+    padding-left: 12px;
+    width: 455px;
+}
+
+@media (max-width: 640px) {
+    div#application div.field input[type=text] {
+        width: 100%;
+    }
+}
+
+div#application div.field input[placeholder="MM"] {
+    padding-left: 10px;
+}
+
+div#application div.field input[placeholder="YYYY"] {
+    padding-left: 7px;
+}
+
+div#application legend {
+    float: none;
+}
+
+div.link-container a {
+    color: var(--link-color);
+    font-size: 14px;
+}
+
+div#application a#add_education {
+    margin-left: 0;
+}
+
+div#field {
+    margin-bottom: 10px;
+}
+
+#main_fields div.field div.field-error-msg {
+    padding-left: 0;
+}
+
+div.field div.msg-container {
+    padding-top: 5px;
+}
+
+#application .field .select2-container {
+    margin-top: 0;
+}
+
+div#application div.field a.locate-me {
+    display: block;
+}
+
+div#application div.field textarea {
+    border-color: var(--field-border-color);
+    width: 455px;
+}
+
+@media (max-width: 640px) {
+    div#application div.field textarea {
+        width: 100%;
+    }
+}
+
+div#application div.field div.select2-container {
+    width: 455px !important;
+}
+
+@media (max-width: 640px) {
+    div#application div.field div.select2-container {
+        width: 100% !important;
+    }
+}
+
+div.s3-upload-form {
+    display: none;
+}
+
+/* Confirmation Page */
+#main #view-more {
+    text-align: left;
+    padding-top: 0;
+}
+
+#main strong > a {
+    color: var(--link-color);
+    font-weight: 400;
+}
+
+
+@media (max-width: 485px) {
+    #main .filter-label {
+        margin-top: 12px;
+    }
+    #main section .location {
+        margin-top: auto;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .attach-or-paste .link-container a {
+        padding: 0.625rem 1.875rem !important;
+        border: 2px solid #f20075 !important;
+        border-radius: 0.25rem !important;
+        background-color: white !important;
+        color: #f20075 !important;
+        font-weight: 600 !important;
+        line-height: 1.35 !important;
+        letter-spacing: .03rem !important;
+        text-shadow: none !important;
+        font-family: inherit !important;
+        transition: all 0.3s !important;
+        background-image: none;
+        font-family: sofia-pro,sans-serif;
+    }
+
+    .attach-or-paste .link-container a:hover {
+        background-color: #f20075 !important;
+        color: white !important;
+    }
+}
+
+
+#back_to_application_link {
+        padding: 0.625rem 1.875rem !important;
+        border: 2px solid #f20075 !important;
+        border-radius: 0.25rem !important;
+        background-color: white !important;
+        color: #f20075 !important;
+        font-weight: 600 !important;
+        line-height: 1.35 !important;
+        letter-spacing: .03rem !important;
+        text-shadow: none !important;
+        font-family: inherit !important;
+        transition: all 0.3s !important;
+        margin: 0 auto;
+}
+
+#back_to_application_link:hover {
+        background-color: #f20075 !important;
+        color: white !important;
+        text-decoration: none;
+    
+}
+
+#view-more a:hover {
+    color: rgb(0, 187, 255);
+    text-decoration: none;
+}
+
+
+
